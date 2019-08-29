@@ -1,0 +1,5 @@
+{
+  "data": {
+    "foo": "Text received from backend via json-server mock."
+  }
+}

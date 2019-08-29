@@ -1,0 +1,16 @@
+image: node-11-browser
+
+definitions:
+  steps:
+    - step: &browsertest
+        name: browsertest
+        script:
+          - npm install
+          - BROWSER=none npm start &
+          - npm run-script mock &
+          - CI=true npm run browsertests:desktop
+          - CI=true npm run browsertests:mobile
+
+pipelines:
+  default:
+    - step: *browsertest
